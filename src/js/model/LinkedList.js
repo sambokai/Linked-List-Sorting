@@ -35,6 +35,13 @@ class LinkedList {
     return this;
   }
 
+  prepend(value) {
+    const node = new Node(value);
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+  }
+
   get(index){
     let current = this.head;
     let count = 0;

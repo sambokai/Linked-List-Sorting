@@ -7,6 +7,16 @@ describe('LinkedList', () => {
     console.log(exampleList);
   });
 
+  describe('prepend()', () => {
+    it('should  prepend a linked list with a value', () => {
+      const exampleList = new LinkedList("Two").append("Three");
+      exampleList.prepend("One");
+
+      expect(exampleList.length).toBe(3);
+      expect(exampleList.head.value).toBe("One");
+    });
+  });
+
   describe('get()', () => {
     it('should return the node, located at the desired index', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
