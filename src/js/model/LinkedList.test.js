@@ -50,4 +50,13 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('Generator function', () => {
+    it("should alllow iteration over the list's elements", () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      const expectedValues = ["One", "Two", "Three", "Four"];
+
+      expect([...exampleList]).toMatchObject(expectedValues)
+    });
+  });
 });

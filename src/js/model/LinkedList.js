@@ -61,6 +61,15 @@ class LinkedList {
 
     return current;
   }
+
+  *[Symbol.iterator](){
+    let element = this.head;
+
+    while (element) {
+      yield element.value;
+      element = element.next;
+    }
+  }
 }
 
 export default LinkedList;
