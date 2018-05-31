@@ -95,6 +95,10 @@ class LinkedList {
     this.length = 0;
   }
 
+  filter(predicate){
+    return [...this].filter(predicate);
+  }
+
   *[Symbol.iterator](){
     let element = this.head;
 

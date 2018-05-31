@@ -98,6 +98,22 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('filter()', () => {
+    it('should return a linked list that was filtered by a predefined predicate function', () => {
+      const exampleObjects = [
+        {id: 100, body: 'Apple'},
+        {id: 200, body: 'Banana'},
+        {id: 300, body: 'Strawberry'}
+      ];
+
+      const exampleList = new LinkedList(exampleObjects[0]).append(exampleObjects[1]).append(exampleObjects[2]);
+
+      const filtered = exampleList.filter(element => element.body === 'Banana');
+
+      expect(filtered).toMatchObject([exampleObjects[1]]);
+    });
+  });
+
   describe('Generator function', () => {
     it("should alllow iteration over the list's elements", () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
