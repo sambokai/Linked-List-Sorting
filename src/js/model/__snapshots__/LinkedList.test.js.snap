@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkedList should allow initialization of a linked list by chaining append methods  1`] = `
+LinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": Node {
+          "next": null,
+          "value": "Four",
+        },
+        "value": "Three",
+      },
+      "value": "Two",
+    },
+    "value": "One",
+  },
+  "length": 4,
+}
+`;
