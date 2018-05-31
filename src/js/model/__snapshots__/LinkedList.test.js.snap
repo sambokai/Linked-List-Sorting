@@ -23,39 +23,7 @@ LinkedList {
 }
 `;
 
-exports[`LinkedList remove() should remove and return an element at a specified index other than 0 1`] = `
-LinkedList {
-  "head": Node {
-    "next": Node {
-      "next": Node {
-        "next": null,
-        "value": "Four",
-      },
-      "value": "Three",
-    },
-    "value": "One",
-  },
-  "length": 3,
-}
-`;
-
 exports[`LinkedList remove() should remove the first element if desired 1`] = `
-LinkedList {
-  "head": Node {
-    "next": Node {
-      "next": Node {
-        "next": null,
-        "value": "Four",
-      },
-      "value": "Three",
-    },
-    "value": "Two",
-  },
-  "length": 3,
-}
-`;
-
-exports[`LinkedList remove() should remove the first element if the index is 0 1`] = `
 LinkedList {
   "head": Node {
     "next": Node {
