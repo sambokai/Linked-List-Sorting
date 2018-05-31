@@ -4,6 +4,8 @@ import LinkedList from './LinkedList';
 describe('LinkedList', () => {
   it('should allow initialization of a linked list by chaining append methods ', () => {
     const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+    expect(exampleList).toMatchSnapshot()
   });
 
   describe('prepend()', () => {
