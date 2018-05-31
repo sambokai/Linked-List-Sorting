@@ -62,6 +62,39 @@ class LinkedList {
     return current;
   }
 
+  remove(index) {
+    let current = this.head;
+
+    if (index < 0 || index > this.length) {
+      throw new Error('Invalid index')
+    }
+
+    if (index === 0) {
+      this.head = current.next;
+      this.length--;
+      return current;
+    }
+
+    let count = 0;
+    let previousNode;
+    let nodeToBeDeleted;
+
+    while (count < index) {
+      previousNode = current;
+      nodeToBeDeleted = current.next;
+      count++;
+    }
+
+    previousNode.next = nodeToBeDeleted.next;
+    this.length--;
+    return nodeToBeDeleted;
+  }
+
+  clear(){
+    this.head = null;
+    this.length = 0;
+  }
+
   *[Symbol.iterator](){
     let element = this.head;
 

@@ -51,6 +51,53 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('remove()', () => {
+    it('should remove an element at a specified index other than 0', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      exampleList.remove(1);
+
+      expect(exampleList).toMatchSnapshot();
+    });
+
+    it('should remove the first element if desired', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      exampleList.remove(0);
+
+      expect(exampleList).toMatchSnapshot();
+    });
+
+    it('return the removed element', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      const deletedNode = exampleList.remove(1);
+
+      expect(deletedNode.value).toBe("Two");
+    });
+
+    it('should throw an error if index to be removed does not exist', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      const invalidTestIndexes = [-1, 20];
+
+      invalidTestIndexes.forEach((index) =>
+        expect(() =>
+          exampleList.remove(index)
+        ).toThrowError('Invalid index'))
+    });
+  });
+
+  describe('clear()', () => {
+    it('should delete the entire list', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      exampleList.clear();
+
+      expect(exampleList).toMatchSnapshot();
+    });
+  });
+
   describe('Generator function', () => {
     it("should alllow iteration over the list's elements", () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
