@@ -109,8 +109,9 @@ describe('LinkedList', () => {
       const exampleList = new LinkedList(exampleObjects[0]).append(exampleObjects[1]).append(exampleObjects[2]);
 
       const filtered = exampleList.filter(element => element.body === 'Banana');
+      const expected = new LinkedList(exampleObjects[1]);
 
-      expect(filtered).toMatchObject([exampleObjects[1]]);
+      expect(filtered).toEqual(expected);
     });
   });
 

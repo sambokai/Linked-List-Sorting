@@ -96,7 +96,11 @@ class LinkedList {
   }
 
   filter(predicate){
-    return [...this].filter(predicate);
+    let filtered = new LinkedList();
+    for (const element of [...this].filter(predicate)) {
+      filtered.append(element);
+    }
+    return filtered;
   }
 
   *[Symbol.iterator](){
