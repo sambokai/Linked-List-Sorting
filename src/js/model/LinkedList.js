@@ -118,6 +118,47 @@ class LinkedList {
     return sorted
   }
 
+  mergeSort(compare = (a, b) => a > b){
+    const sortedArray = LinkedList.mergeArray([...this], compare);
+    const sortedList = new LinkedList();
+    sortedArray.forEach(element => sortedList.append(element));
+    return sortedList;
+  }
+
+  static mergeArray(arr, compare) {
+    if (arr.length === 1) {
+      return arr
+    }
+
+    const middle = Math.floor(arr.length / 2);
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle);
+
+    return this.merge(
+      this.mergeArray(left, compare),
+      this.mergeArray(right, compare),
+      compare
+    )
+  }
+
+  static merge(left, right, compare){
+    let result = [];
+    let indexLeft = 0;
+    let indexRight = 0;
+
+    while (indexLeft < left.length && indexRight < right.length) {
+      if (compare(right[indexRight], left[indexLeft])) {
+        result.push(left[indexLeft]);
+        indexLeft++
+      } else {
+        result.push(right[indexRight]);
+        indexRight++
+      }
+    }
+
+    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+  }
+
   *[Symbol.iterator](){
     let element = this.head;
 
