@@ -11,7 +11,7 @@ export const resetId = () => {studentIdCounter = 0;};
 
 class Student {
   constructor(firstName, lastName, universityMajor) {
-    if (universityMajor in Majors) {
+    if (Object.values(Majors).includes(universityMajor)) {
       this.universityMajor = universityMajor;
     } else {
       throw 'Invalid Major';

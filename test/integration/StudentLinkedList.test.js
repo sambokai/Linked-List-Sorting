@@ -1,5 +1,6 @@
 import Student from "../../src/js/model/Student";
 import LinkedList from "../../src/js/model/LinkedList";
+import Majors from "../../src/js/model/Majors";
 
 const exampleStudents = () => new LinkedList()
   .append(new Student("Sam", "Bokai", "cs"))
@@ -15,7 +16,7 @@ describe('A LinkedList of Students', () => {
     const students = exampleStudents();
 
     const search = {
-      csStudents: (student) => student.universityMajor === 'cs',
+      csStudents: (student) => student.universityMajor === Majors.COMPUTER_SCIENCE,
       firstnameSam: (student) => student.firstName === 'Sam',
     };
 

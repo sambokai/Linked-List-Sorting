@@ -1,8 +1,8 @@
 const Majors = Object.freeze({
-  'cs': 'COMPUTER SCIENCE',
-  'ma': 'MATHEMATICS',
-  'hi': 'HISTORY',
-  'ec': 'ECONOMICS'
+  'COMPUTER_SCIENCE': 'cs',
+  'MATHEMATICS': 'ma',
+  'HISTORY': 'hi',
+  'ECONOMICS': 'ec'
 });
 
 export default Majors;
