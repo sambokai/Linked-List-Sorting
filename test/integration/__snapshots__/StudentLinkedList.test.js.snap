@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A LinkedList of Students should allow searching for students by specific parameters: csStudents 1`] = `
+Array [
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "George",
+    "id": 4,
+    "lastName": "Berg",
+    "universityMajor": "cs",
+  },
+]
+`;
+
+exports[`A LinkedList of Students should allow searching for students by specific parameters: firstNameSamStudents 1`] = `
+Array [
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 5,
+    "lastName": "Friday",
+    "universityMajor": "hi",
+  },
+]
+`;
+
+exports[`A LinkedList of Students should allow sorting students by specific properties using insertionSort: sortedById 1`] = `
+Array [
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Yanis",
+    "id": 2,
+    "lastName": "Varoufakis",
+    "universityMajor": "ec",
+  },
+  Student {
+    "firstName": "Slavoj",
+    "id": 3,
+    "lastName": "Zizek",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "George",
+    "id": 4,
+    "lastName": "Berg",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 5,
+    "lastName": "Friday",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Thomas",
+    "id": 6,
+    "lastName": "Berg",
+    "universityMajor": "ma",
+  },
+]
+`;
+
+exports[`A LinkedList of Students should allow sorting students by specific properties using insertionSort: sortedByMajor 1`] = `
+Array [
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "George",
+    "id": 4,
+    "lastName": "Berg",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Yanis",
+    "id": 2,
+    "lastName": "Varoufakis",
+    "universityMajor": "ec",
+  },
+  Student {
+    "firstName": "Slavoj",
+    "id": 3,
+    "lastName": "Zizek",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 5,
+    "lastName": "Friday",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Thomas",
+    "id": 6,
+    "lastName": "Berg",
+    "universityMajor": "ma",
+  },
+]
+`;
+
+exports[`A LinkedList of Students should allow sorting students by specific properties using mergeSort: sortedById 1`] = `
+Array [
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Yanis",
+    "id": 2,
+    "lastName": "Varoufakis",
+    "universityMajor": "ec",
+  },
+  Student {
+    "firstName": "Slavoj",
+    "id": 3,
+    "lastName": "Zizek",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "George",
+    "id": 4,
+    "lastName": "Berg",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 5,
+    "lastName": "Friday",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Thomas",
+    "id": 6,
+    "lastName": "Berg",
+    "universityMajor": "ma",
+  },
+]
+`;
+
+exports[`A LinkedList of Students should allow sorting students by specific properties using mergeSort: sortedByMajor 1`] = `
+Array [
+  Student {
+    "firstName": "George",
+    "id": 4,
+    "lastName": "Berg",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 1,
+    "lastName": "Bokai",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Yanis",
+    "id": 2,
+    "lastName": "Varoufakis",
+    "universityMajor": "ec",
+  },
+  Student {
+    "firstName": "Sam",
+    "id": 5,
+    "lastName": "Friday",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Slavoj",
+    "id": 3,
+    "lastName": "Zizek",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Thomas",
+    "id": 6,
+    "lastName": "Berg",
+    "universityMajor": "ma",
+  },
+]
+`;
