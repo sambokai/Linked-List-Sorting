@@ -1,18 +1,19 @@
 import React from 'react';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'Sam',
-    };
+  static navBar() {
+    return (
+      <nav className="navbar navbar-dark bg-dark justify-content-between">
+        <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
+      </nav>
+    );
   }
 
   render() {
     return (
-      <h3>
-        Hello, {this.state.name}! I am React.
-      </h3>
+      <div>
+        {App.navBar()}
+      </div>
     );
   }
 }

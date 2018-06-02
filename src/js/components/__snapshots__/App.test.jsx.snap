@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-<h3>
-  Hello, 
-  Sam
-  ! I am React.
-</h3>
+<div>
+  <nav
+    className="navbar navbar-dark bg-dark justify-content-between"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      id="navbar-logo"
+    >
+      Linked List & Students
+    </a>
+  </nav>
+</div>
 `;
