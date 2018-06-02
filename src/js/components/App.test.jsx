@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Hello from './Hello';
+import App from './App';
 
 
 it('should render correctly', () => {
-  const wrapper = shallow(<Hello />);
+  const wrapper = shallow(<App />);
 
   expect(wrapper).toMatchSnapshot();
 });
