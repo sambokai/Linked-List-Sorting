@@ -103,6 +103,21 @@ class LinkedList {
     return filtered;
   }
 
+  insertionSort(compare = (a, b) => a > b){
+    let items = [...this];
+    for (let i = 0; i < items.length; i++) {
+      let value = items[i];
+      let j;
+      for (j = i - 1; j > -1 && compare(items[j], value); j--) {
+        items[j + 1] = items[j]
+      }
+      items[j + 1] = value
+    }
+    const sorted = new LinkedList();
+    items.forEach(element => sorted.append(element));
+    return sorted
+  }
+
   *[Symbol.iterator](){
     let element = this.head;
 

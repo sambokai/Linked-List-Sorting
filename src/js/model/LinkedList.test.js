@@ -115,6 +115,51 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('insertionSort()', () => {
+    it('should sort a linked-list of integers', () => {
+      const exampleList = new LinkedList(5).append(2).append(20).append(9).append(-5);
+
+      const sorted = exampleList.insertionSort();
+
+      expect([...sorted]).toMatchObject([-5, 2, 5, 9, 20]);
+    });
+
+    it('should sort a linked-list of objects, by specified comparator', () => {
+      const exampleObjects = [
+        {id: 500, body: 'Strawberry'},
+        {id: 100, body: 'Apple'},
+        {id: 300, body: 'Lemon'},
+        {id: 400, body: 'Pear'},
+        {id: 200, body: 'Watermelon'},
+
+      ];
+      const unsortedList = new LinkedList();
+      exampleObjects.forEach(object => unsortedList.append(object));
+
+      const compareId = (a, b) => a.id > b.id;
+      const compareNameLength = (a, b) => a.body.length > b.body.length;
+
+      const sortedById = unsortedList.insertionSort(compareId);
+      const sortedByName = unsortedList.insertionSort(compareNameLength);
+
+      expect([...sortedById]).toMatchObject([
+        {"body": "Apple", "id": 100},
+        {"body": "Watermelon", "id": 200},
+        {"body": "Lemon", "id": 300},
+        {"body": "Pear", "id": 400},
+        {"body": "Strawberry", "id": 500}
+      ]);
+
+      expect([...sortedByName]).toMatchObject([
+        {"body": "Pear", "id": 400},
+        {"body": "Apple", "id": 100},
+        {"body": "Lemon", "id": 300},
+        {"body": "Strawberry", "id": 500},
+        {"body": "Watermelon", "id": 200}
+      ])
+    });
+  });
+
   describe('Generator function', () => {
     it("should alllow iteration over the list's elements", () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
