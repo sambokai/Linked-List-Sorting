@@ -88,6 +88,23 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('getIndex', () => {
+    it('should get the index of the first element matching the predefined boolean predicate', () => {
+      const exampleObjects = [
+        {id: 500, body: 'Strawberry'},
+        {id: 100, body: 'Apple'},
+        {id: 300, body: 'Lemon'},
+        {id: 400, body: 'Pear'},
+        {id: 200, body: 'Watermelon'},
+      ];
+      const fruits = new LinkedList();
+      exampleObjects.forEach(object => fruits.append(object));
+      const bodyIsPear = element => element.body === 'Pear';
+
+      expect(fruits.getIndex(bodyIsPear)).toEqual(3);
+    });
+  });
+
   describe('clear()', () => {
     it('should delete the entire list', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");

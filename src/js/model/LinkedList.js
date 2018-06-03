@@ -90,6 +90,23 @@ class LinkedList {
     return nodeToBeDeleted;
   }
 
+  getIndex(predicate) {
+    let current = this.head;
+    let count = 0;
+
+    if (this.length === 0) {
+      throw new Error('Empty list');
+    }
+
+    while (count < this.length) {
+      if (predicate(current.value)) return count
+      current = current.next;
+      count += 1;
+    }
+
+    return -1;
+  }
+
   clear() {
     this.head = null;
     this.length = 0;
