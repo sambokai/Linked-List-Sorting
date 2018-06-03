@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDataGrid from 'react-data-grid';
+import faker from 'faker';
 
 import LinkedList from '../../model/LinkedList';
 import Student from '../../model/Student';
@@ -48,7 +49,7 @@ class Students extends Component {
         const keys = Object.keys(Majors);
         return Majors[keys[Math.floor(keys.length * Math.random())]];
       };
-      const student = new Student('Sam', `Bokai${i}`, randomMajor());
+      const student = new Student(faker.name.firstName(), faker.name.lastName(), randomMajor());
       randomStudents.append(student);
     }
 
