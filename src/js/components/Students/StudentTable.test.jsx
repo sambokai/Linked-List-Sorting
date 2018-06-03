@@ -9,7 +9,7 @@ import Student from '../../model/Student';
 
 describe('<StudentTable/>', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<StudentTable />);
+    const wrapper = shallow(<StudentTable randomStudentCount={50} />);
 
     expect(wrapper).toMatchSnapshot();
   });

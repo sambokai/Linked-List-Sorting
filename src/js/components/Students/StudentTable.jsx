@@ -96,7 +96,7 @@ StudentTable.propTypes = {
 };
 
 StudentTable.defaultProps = {
-  randomStudentCount: 50,
+  randomStudentCount: 500,
 };
 
 export default StudentTable;

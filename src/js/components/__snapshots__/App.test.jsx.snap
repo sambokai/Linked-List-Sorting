@@ -14,7 +14,7 @@ exports[`should render correctly 1`] = `
     </a>
   </nav>
   <StudentTable
-    randomStudentCount={50}
+    randomStudentCount={500}
   />
 </div>
 `;
