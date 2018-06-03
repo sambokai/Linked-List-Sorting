@@ -1,4 +1,5 @@
 import React from 'react';
+import Students from './Students/Students';
 
 class App extends React.Component {
   static navBar() {
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div>
         {App.navBar()}
+        <Students />
       </div>
     );
   }

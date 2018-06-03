@@ -13,5 +13,6 @@ exports[`should render correctly 1`] = `
       Linked List & Students
     </a>
   </nav>
+  <Students />
 </div>
 `;
