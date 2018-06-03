@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import ReactDataGrid from 'react-data-grid';
 import faker from 'faker';
 
@@ -38,7 +40,7 @@ class StudentTable extends Component {
   }
 
   componentWillMount() {
-    this.generateRandomStudents(100);
+    this.generateRandomStudents(this.props.randomStudentCount);
   }
 
   generateRandomStudents(count) {
@@ -88,5 +90,13 @@ class StudentTable extends Component {
     );
   }
 }
+
+StudentTable.propTypes = {
+  randomStudentCount: PropTypes.number,
+};
+
+StudentTable.defaultProps = {
+  randomStudentCount: 50,
+};
 
 export default StudentTable;

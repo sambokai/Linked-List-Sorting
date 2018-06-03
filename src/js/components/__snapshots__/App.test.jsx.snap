@@ -13,6 +13,8 @@ exports[`should render correctly 1`] = `
       Linked List & Students
     </a>
   </nav>
-  <StudentTable />
+  <StudentTable
+    randomStudentCount={50}
+  />
 </div>
 `;
