@@ -74,11 +74,13 @@ class StudentTable extends Component {
     }));
   };
 
+  rowGetter = i => this.state.students.get(i).value;
+
   render() {
     return (
       <ReactDataGrid
         columns={this.state.columns}
-        rowGetter={i => this.state.students.get(i).value}
+        rowGetter={this.rowGetter}
         rowsCount={this.state.students.length}
         minHeight={400}
         onGridSort={this.handleGridSort}
