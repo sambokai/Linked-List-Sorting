@@ -84,7 +84,7 @@ class StudentTable extends Component {
         columns={this.state.columns}
         rowGetter={this.rowGetter}
         rowsCount={this.state.students.length}
-        minHeight={400}
+        minHeight={600}
         onGridSort={this.handleGridSort}
       />
     );
