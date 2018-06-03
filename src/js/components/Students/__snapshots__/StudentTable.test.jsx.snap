@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StudentTable/> handleGridSort() should sort the linkedlist of students correctly for direction 'ASC': firstNameASC 1`] = `
+Array [
+  Student {
+    "firstName": "Anton",
+    "id": 1,
+    "lastName": "Meyer",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "George",
+    "id": 3,
+    "lastName": "Michael",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Xerxes",
+    "id": 2,
+    "lastName": "Smith",
+    "universityMajor": "ma",
+  },
+]
+`;
+
+exports[`<StudentTable/> handleGridSort() should sort the linkedlist of students correctly for direction 'DESC': firstNameDESC 1`] = `
+Array [
+  Student {
+    "firstName": "Xerxes",
+    "id": 2,
+    "lastName": "Smith",
+    "universityMajor": "ma",
+  },
+  Student {
+    "firstName": "George",
+    "id": 3,
+    "lastName": "Michael",
+    "universityMajor": "hi",
+  },
+  Student {
+    "firstName": "Anton",
+    "id": 1,
+    "lastName": "Meyer",
+    "universityMajor": "cs",
+  },
+]
+`;
+
+exports[`<StudentTable/> handleGridSort() should sort the linkedlist of students correctly for direction 'NONE': firstNameNONE 1`] = `
+Array [
+  Student {
+    "firstName": "Anton",
+    "id": 1,
+    "lastName": "Meyer",
+    "universityMajor": "cs",
+  },
+  Student {
+    "firstName": "Xerxes",
+    "id": 2,
+    "lastName": "Smith",
+    "universityMajor": "ma",
+  },
+  Student {
+    "firstName": "George",
+    "id": 3,
+    "lastName": "Michael",
+    "universityMajor": "hi",
+  },
+]
+`;
+
+exports[`<StudentTable/> should render correctly 1`] = `
+<ReactDataGrid
+  cellNavigationMode="none"
+  columnEquality={[Function]}
+  columns={
+    Array [
+      Object {
+        "key": "id",
+        "name": "ID",
+        "sortable": true,
+      },
+      Object {
+        "key": "firstName",
+        "name": "First Name",
+        "sortable": true,
+      },
+      Object {
+        "key": "lastName",
+        "name": "Last Name",
+        "sortable": true,
+      },
+      Object {
+        "key": "universityMajor",
+        "name": "Major",
+        "sortable": true,
+      },
+    ]
+  }
+  enableCellAutoFocus={true}
+  enableCellSelect={false}
+  enableRowSelect={false}
+  headerFiltersHeight={45}
+  minColumnWidth={80}
+  minHeight={400}
+  onBeforeEdit={[Function]}
+  onGridSort={[Function]}
+  overScan={
+    Object {
+      "colsEnd": 5,
+      "colsStart": 5,
+      "rowsEnd": 5,
+      "rowsStart": 5,
+    }
+  }
+  rowGetter={[Function]}
+  rowHeight={35}
+  rowKey="id"
+  rowScrollTimeout={0}
+  rowsCount={50}
+  scrollToRowIndex={0}
+  tabIndex={-1}
+/>
+`;
