@@ -76,21 +76,25 @@ exports[`<StudentTable/> should render correctly 1`] = `
   columns={
     Array [
       Object {
+        "filterable": true,
         "key": "id",
         "name": "ID",
         "sortable": true,
       },
       Object {
+        "filterable": true,
         "key": "firstName",
         "name": "First Name",
         "sortable": true,
       },
       Object {
+        "filterable": true,
         "key": "lastName",
         "name": "Last Name",
         "sortable": true,
       },
       Object {
+        "filterable": true,
         "key": "universityMajor",
         "name": "Major",
         "sortable": true,
@@ -103,7 +107,9 @@ exports[`<StudentTable/> should render correctly 1`] = `
   headerFiltersHeight={45}
   minColumnWidth={80}
   minHeight={600}
+  onAddFilter={[Function]}
   onBeforeEdit={[Function]}
+  onClearFilters={[Function]}
   onGridSort={[Function]}
   overScan={
     Object {
@@ -120,5 +126,13 @@ exports[`<StudentTable/> should render correctly 1`] = `
   rowsCount={50}
   scrollToRowIndex={0}
   tabIndex={-1}
+  toolbar={
+    <Toolbar
+      addRowButtonText="Add Row"
+      enableAddRow={true}
+      enableFilter={true}
+      filterRowsButtonText="Filter Rows"
+    />
+  }
 />
 `;
