@@ -1,4 +1,4 @@
-import Majors from "./Majors";
+import Majors from './Majors';
 
 let studentIdCounter = 0;
 const incrementId = () => {
@@ -6,7 +6,7 @@ const incrementId = () => {
   return studentIdCounter;
 };
 
-export const resetId = () => {studentIdCounter = 0;};
+export const resetId = () => { studentIdCounter = 0; };
 
 
 class Student {
@@ -14,7 +14,7 @@ class Student {
     if (Object.values(Majors).includes(universityMajor)) {
       this.universityMajor = universityMajor;
     } else {
-      throw 'Invalid Major';
+      throw new Error('Invalid Major');
     }
     this.firstName = firstName;
     this.lastName = lastName;

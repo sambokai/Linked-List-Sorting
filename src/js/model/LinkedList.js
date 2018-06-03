@@ -1,5 +1,5 @@
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
@@ -10,7 +10,7 @@ class LinkedList {
     this.length = 0;
     this.head = null;
 
-    if (value) {this.append(value)}
+    if (value) { this.append(value); }
   }
 
   append(value) {
@@ -19,7 +19,7 @@ class LinkedList {
 
     if (!currentNode) {
       this.head = node;
-      this.length++;
+      this.length += 1;
 
       return this;
     }
@@ -30,7 +30,7 @@ class LinkedList {
 
     currentNode.next = node;
 
-    this.length++;
+    this.length += 1;
 
     return this;
   }
@@ -39,39 +39,39 @@ class LinkedList {
     const node = new Node(value);
     node.next = this.head;
     this.head = node;
-    this.length++;
+    this.length += 1;
   }
 
-  get(index){
+  get(index) {
     let current = this.head;
     let count = 0;
 
     if (this.length === 0) {
-      throw new Error('Empty list')
+      throw new Error('Empty list');
     }
 
     if (index < 0 || index > this.length) {
-      throw new Error('Invalid index')
+      throw new Error('Invalid index');
     }
 
     while (count < index) {
       current = current.next;
-      count++;
+      count += 1;
     }
 
     return current;
   }
 
   remove(index) {
-    let current = this.head;
+    const current = this.head;
 
     if (index < 0 || index > this.length) {
-      throw new Error('Invalid index')
+      throw new Error('Invalid index');
     }
 
     if (index === 0) {
       this.head = current.next;
-      this.length--;
+      this.length -= 1;
       return current;
     }
 
@@ -82,43 +82,44 @@ class LinkedList {
     while (count < index) {
       previousNode = current;
       nodeToBeDeleted = current.next;
-      count++;
+      count += 1;
     }
 
     previousNode.next = nodeToBeDeleted.next;
-    this.length--;
+    this.length -= 1;
     return nodeToBeDeleted;
   }
 
-  clear(){
+  clear() {
     this.head = null;
     this.length = 0;
   }
 
-  filter(predicate){
-    let filtered = new LinkedList();
+  filter(predicate) {
+    const filtered = new LinkedList();
+    // eslint-disable-next-line no-restricted-syntax
     for (const element of [...this].filter(predicate)) {
       filtered.append(element);
     }
     return filtered;
   }
 
-  insertionSort(compare = (a, b) => a > b){
-    let items = [...this];
-    for (let i = 0; i < items.length; i++) {
-      let value = items[i];
+  insertionSort(compare = (a, b) => a > b) {
+    const items = [...this];
+    for (let i = 0; i < items.length; i += 1) {
+      const value = items[i];
       let j;
-      for (j = i - 1; j > -1 && compare(items[j], value); j--) {
-        items[j + 1] = items[j]
+      for (j = i - 1; j > -1 && compare(items[j], value); j -= 1) {
+        items[j + 1] = items[j];
       }
-      items[j + 1] = value
+      items[j + 1] = value;
     }
     const sorted = new LinkedList();
     items.forEach(element => sorted.append(element));
-    return sorted
+    return sorted;
   }
 
-  mergeSort(compare = (a, b) => a > b){
+  mergeSort(compare = (a, b) => a > b) {
     const sortedArray = LinkedList.mergeArray([...this], compare);
     const sortedList = new LinkedList();
     sortedArray.forEach(element => sortedList.append(element));
@@ -127,7 +128,7 @@ class LinkedList {
 
   static mergeArray(arr, compare) {
     if (arr.length === 1) {
-      return arr
+      return arr;
     }
 
     const middle = Math.floor(arr.length / 2);
@@ -137,29 +138,29 @@ class LinkedList {
     return this.merge(
       this.mergeArray(left, compare),
       this.mergeArray(right, compare),
-      compare
-    )
+      compare,
+    );
   }
 
-  static merge(left, right, compare){
-    let result = [];
+  static merge(left, right, compare) {
+    const result = [];
     let indexLeft = 0;
     let indexRight = 0;
 
     while (indexLeft < left.length && indexRight < right.length) {
       if (compare(right[indexRight], left[indexLeft])) {
         result.push(left[indexLeft]);
-        indexLeft++
+        indexLeft += 1;
       } else {
         result.push(right[indexRight]);
-        indexRight++
+        indexRight += 1;
       }
     }
 
-    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
   }
 
-  *[Symbol.iterator](){
+  * [Symbol.iterator]() {
     let element = this.head;
 
     while (element) {
