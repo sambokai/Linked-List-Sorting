@@ -15,7 +15,7 @@ const paths = {
 
 // Webpack Configuration
 module.exports = {
-  entry: path.join(paths.SRC, 'index.jsx'),
+  entry: ['babel-polyfill', path.join(paths.SRC, 'index.jsx')],
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js',
