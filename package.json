@@ -9,6 +9,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-data-grid": "^3.0.11",
+    "react-data-grid-addons": "^4.0.8",
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
