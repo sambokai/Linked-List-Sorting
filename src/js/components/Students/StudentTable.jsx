@@ -6,7 +6,7 @@ import LinkedList from '../../model/LinkedList';
 import Student from '../../model/Student';
 import Majors from '../../model/Majors';
 
-class Students extends Component {
+class StudentTable extends Component {
   constructor(props) {
     super(props);
 
@@ -87,4 +87,4 @@ class Students extends Component {
   }
 }
 
-export default Students;
+export default StudentTable;
