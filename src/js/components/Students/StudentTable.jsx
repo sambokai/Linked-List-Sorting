@@ -22,6 +22,7 @@ class StudentTable extends Component {
           name: 'ID',
           sortable: true,
           filterable: true,
+          width: 100,
         },
         {
           key: 'firstName',
@@ -52,6 +53,19 @@ class StudentTable extends Component {
 
   onClearFilters = () => {
     this.setState({ filters: {} });
+  };
+
+
+  getCellAction = (column, row) => {
+    if (column.key === 'id') {
+      return [
+        {
+          icon: 'fas fa-trash-alt',
+          callback: () => { this.deleteStudentById(row.id); },
+        },
+      ];
+    }
+    return null;
   };
 
   handleGridSort = (columnKey, direction) => {
@@ -118,6 +132,13 @@ class StudentTable extends Component {
 
   rowGetter = i => this.filteredRows().get(i).value;
 
+
+  deleteStudentById(id) {
+    const indexToBeDeleted = this.state.students.getIndex(student => student.id === id);
+    const studentsWithoutDeleted = this.state.students.remove(indexToBeDeleted);
+    this.setState({ students: studentsWithoutDeleted });
+  }
+
   render() {
     return (
       <ReactDataGrid
@@ -129,6 +150,7 @@ class StudentTable extends Component {
         toolbar={<Toolbar enableFilter />}
         onAddFilter={this.handleFilterChange}
         onClearFilters={this.onClearFilters}
+        getCellActions={this.getCellAction}
       />
     );
   }

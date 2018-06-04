@@ -80,6 +80,7 @@ exports[`<StudentTable/> should render correctly 1`] = `
         "key": "id",
         "name": "ID",
         "sortable": true,
+        "width": 100,
       },
       Object {
         "filterable": true,
@@ -104,6 +105,7 @@ exports[`<StudentTable/> should render correctly 1`] = `
   enableCellAutoFocus={true}
   enableCellSelect={false}
   enableRowSelect={false}
+  getCellActions={[Function]}
   headerFiltersHeight={45}
   minColumnWidth={80}
   minHeight={600}
