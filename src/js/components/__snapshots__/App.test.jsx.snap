@@ -2,6 +2,6 @@
 
 exports[`should render correctly 1`] = `
 <StudentTable
-  randomStudentCount={500}
+  initialRandomStudentCount={500}
 />
 `;

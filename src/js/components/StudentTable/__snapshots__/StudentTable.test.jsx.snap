@@ -84,6 +84,26 @@ exports[`<StudentTable/> should render correctly 1`] = `
     <form
       className="form-inline"
     >
+      <div
+        className="form-group"
+      >
+        <input
+          className="form-control"
+          defaultValue={50}
+          max={100}
+          min={1}
+          size={4}
+          type="number"
+        />
+        <button
+          className="btn btn-primary ml-2"
+          id="new-note-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Generate Students
+        </button>
+      </div>
       <button
         className="btn btn-danger ml-2"
         id="delete-note-button"

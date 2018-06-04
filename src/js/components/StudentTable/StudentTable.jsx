@@ -15,7 +15,7 @@ class StudentTable extends Component {
     super(props);
 
     this.state = {
-      students: null,
+      students: new LinkedList(),
       columns: [
         {
           key: 'id',
@@ -44,11 +44,14 @@ class StudentTable extends Component {
         },
       ],
       filters: {},
+      maxStudentGenerateCount: 100,
     };
+
+    this.studentGenerateCountInput = React.createRef();
   }
 
   componentWillMount() {
-    this.generateRandomStudents(this.props.randomStudentCount);
+    this.generateRandomStudents(this.props.initialRandomStudentCount);
   }
 
   onClearFilters = () => {
@@ -99,8 +102,21 @@ class StudentTable extends Component {
     this.setState({ students: clearedTable });
   };
 
+  handleGenerateStudents = () => {
+    const generateCount = this.studentGenerateCountInput.current.value;
+    if (generateCount && generateCount > 0) {
+      if (generateCount <= this.state.maxStudentGenerateCount) {
+        this.generateRandomStudents(generateCount);
+      } else {
+        // eslint-disable-next-line no-alert
+        alert(`Maximum value of students to be generated is ${this.state.maxStudentGenerateCount}. Please retry.`);
+      }
+    }
+  };
+
   generateRandomStudents(count) {
-    const randomStudents = new LinkedList();
+    // eslint-disable-next-line prefer-destructuring
+    const students = this.state.students;
 
     for (let i = 0; i < count; i += 1) {
       const randomMajor = () => {
@@ -108,11 +124,11 @@ class StudentTable extends Component {
         return Majors[keys[Math.floor(keys.length * Math.random())]];
       };
       const student = new Student(faker.name.firstName(), faker.name.lastName(), randomMajor());
-      randomStudents.append(student);
+      students.append(student);
     }
 
-    this.setState({ students: randomStudents });
-    return randomStudents;
+    this.setState({ students });
+    return students;
   }
 
   filteredRows = () => {
@@ -150,6 +166,16 @@ class StudentTable extends Component {
         <nav className="navbar navbar-dark bg-dark justify-content-between">
           <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
           <form className="form-inline">
+            <div className="form-group">
+              <input ref={this.studentGenerateCountInput} defaultValue={50} className="form-control" type="number" size={4} min={1} max={this.state.maxStudentGenerateCount} />
+              <button
+                id="new-note-button"
+                onClick={this.handleGenerateStudents}
+                type="button"
+                className="btn btn-primary ml-2"
+              >Generate Students
+              </button>
+            </div>
             <button
               id="delete-note-button"
               onClick={this.handleClearTable}
@@ -176,11 +202,11 @@ class StudentTable extends Component {
 }
 
 StudentTable.propTypes = {
-  randomStudentCount: PropTypes.number,
+  initialRandomStudentCount: PropTypes.number,
 };
 
 StudentTable.defaultProps = {
-  randomStudentCount: 500,
+  initialRandomStudentCount: 500,
 };
 
 export default StudentTable;

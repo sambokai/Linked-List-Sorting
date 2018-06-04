@@ -9,7 +9,7 @@ import Student from '../../model/Student';
 
 describe('<StudentTable/>', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<StudentTable randomStudentCount={50} />);
+    const wrapper = shallow(<StudentTable initialRandomStudentCount={50} />);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -19,7 +19,7 @@ describe('<StudentTable/>', () => {
 
     directions.forEach((direction) => {
       it(`should sort the linkedlist of students correctly for direction '${direction}'`, () => {
-        const wrapper = shallow(<StudentTable randomStudentCount={0} />);
+        const wrapper = shallow(<StudentTable initialRandomStudentCount={0} />);
         const keyToBeSortedBy = 'firstName';
         wrapper.setState({
           students: new LinkedList(new Student('Anton', 'Meyer', Majors.COMPUTER_SCIENCE))
@@ -36,7 +36,7 @@ describe('<StudentTable/>', () => {
 
   describe('rowGetter()', () => {
     it('should return the student at a specified index in the linked-list', () => {
-      const wrapper = shallow(<StudentTable randomStudentCount={0} />);
+      const wrapper = shallow(<StudentTable initialRandomStudentCount={0} />);
       const testStudent = new Student('Xerxes', 'Smith', Majors.MATHEMATICS);
       wrapper.setState({
         students: new LinkedList(new Student('Anton', 'Meyer', Majors.COMPUTER_SCIENCE))
