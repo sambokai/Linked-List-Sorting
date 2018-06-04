@@ -1,5 +1,5 @@
 import React from 'react';
-import StudentTable from './Students/StudentTable';
+import StudentTable from './StudentTable/StudentTable';
 
 class App extends React.Component {
   static navBar() {
