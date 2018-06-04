@@ -11,6 +11,15 @@ import Student from '../../model/Student';
 import Majors from '../../model/Majors';
 
 class StudentTable extends Component {
+  static randomStudent() {
+    return new Student(faker.name.firstName(), faker.name.lastName(), this.randomMajor());
+  }
+
+  static randomMajor() {
+    const keys = Object.keys(Majors);
+    return Majors[keys[Math.floor(keys.length * Math.random())]];
+  }
+
   constructor(props) {
     super(props);
 
@@ -119,17 +128,22 @@ class StudentTable extends Component {
     const students = this.state.students;
 
     for (let i = 0; i < count; i += 1) {
-      const randomMajor = () => {
-        const keys = Object.keys(Majors);
-        return Majors[keys[Math.floor(keys.length * Math.random())]];
-      };
-      const student = new Student(faker.name.firstName(), faker.name.lastName(), randomMajor());
-      students.append(student);
+      students.append(StudentTable.randomStudent());
     }
 
     this.setState({ students });
     return students;
   }
+
+  prependNewStudent = () => {
+    const students = this.state.students.prepend(StudentTable.randomStudent());
+    this.setState({ students });
+  };
+
+  appendNewStudent = () => {
+    const students = this.state.students.append(StudentTable.randomStudent());
+    this.setState({ students });
+  };
 
   filteredRows = () => {
     const predicate = (student) => {
@@ -152,7 +166,6 @@ class StudentTable extends Component {
   };
 
   rowGetter = i => this.filteredRows().get(i).value;
-
 
   deleteStudentById(id) {
     const indexToBeDeleted = this.state.students.getIndex(student => student.id === id);
@@ -191,7 +204,13 @@ class StudentTable extends Component {
           rowsCount={this.filteredRows().length}
           minHeight={600}
           onGridSort={this.handleGridSort}
-          toolbar={<Toolbar enableFilter />}
+          toolbar={(
+            <Toolbar enableFilter>
+              <button className="btn ml-2" onClick={this.prependNewStudent}>Prepend New Student</button>
+              <button className="btn ml-2" onClick={this.appendNewStudent}>Append New Student</button>
+              <div id="student-count" className="d-inline-block ml-3">Total Students: {this.state.students.length}</div>
+            </Toolbar>
+          )}
           onAddFilter={this.handleFilterChange}
           onClearFilters={this.onClearFilters}
           getCellActions={this.getCellAction}

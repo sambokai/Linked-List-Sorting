@@ -178,7 +178,27 @@ exports[`<StudentTable/> should render correctly 1`] = `
         enableAddRow={true}
         enableFilter={true}
         filterRowsButtonText="Filter Rows"
-      />
+      >
+        <button
+          className="btn ml-2"
+          onClick={[Function]}
+        >
+          Prepend New Student
+        </button>
+        <button
+          className="btn ml-2"
+          onClick={[Function]}
+        >
+          Append New Student
+        </button>
+        <div
+          className="d-inline-block ml-3"
+          id="student-count"
+        >
+          Total Students: 
+          50
+        </div>
+      </Toolbar>
     }
   />
 </div>
