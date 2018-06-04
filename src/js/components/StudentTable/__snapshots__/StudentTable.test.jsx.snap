@@ -70,71 +70,96 @@ Array [
 `;
 
 exports[`<StudentTable/> should render correctly 1`] = `
-<ReactDataGrid
-  cellNavigationMode="none"
-  columnEquality={[Function]}
-  columns={
-    Array [
-      Object {
-        "filterable": true,
-        "key": "id",
-        "name": "ID",
-        "sortable": true,
-        "width": 100,
-      },
-      Object {
-        "filterable": true,
-        "key": "firstName",
-        "name": "First Name",
-        "sortable": true,
-      },
-      Object {
-        "filterable": true,
-        "key": "lastName",
-        "name": "Last Name",
-        "sortable": true,
-      },
-      Object {
-        "filterable": true,
-        "key": "universityMajor",
-        "name": "Major",
-        "sortable": true,
-      },
-    ]
-  }
-  enableCellAutoFocus={true}
-  enableCellSelect={false}
-  enableRowSelect={false}
-  getCellActions={[Function]}
-  headerFiltersHeight={45}
-  minColumnWidth={80}
-  minHeight={600}
-  onAddFilter={[Function]}
-  onBeforeEdit={[Function]}
-  onClearFilters={[Function]}
-  onGridSort={[Function]}
-  overScan={
-    Object {
-      "colsEnd": 5,
-      "colsStart": 5,
-      "rowsEnd": 5,
-      "rowsStart": 5,
+<div>
+  <nav
+    className="navbar navbar-dark bg-dark justify-content-between"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      id="navbar-logo"
+    >
+      Linked List & Students
+    </a>
+    <form
+      className="form-inline"
+    >
+      <button
+        className="btn btn-danger ml-2"
+        id="delete-note-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Clear Table
+      </button>
+    </form>
+  </nav>
+  <ReactDataGrid
+    cellNavigationMode="none"
+    columnEquality={[Function]}
+    columns={
+      Array [
+        Object {
+          "filterable": true,
+          "key": "id",
+          "name": "ID",
+          "sortable": true,
+          "width": 100,
+        },
+        Object {
+          "filterable": true,
+          "key": "firstName",
+          "name": "First Name",
+          "sortable": true,
+        },
+        Object {
+          "filterable": true,
+          "key": "lastName",
+          "name": "Last Name",
+          "sortable": true,
+        },
+        Object {
+          "filterable": true,
+          "key": "universityMajor",
+          "name": "Major",
+          "sortable": true,
+        },
+      ]
     }
-  }
-  rowGetter={[Function]}
-  rowHeight={35}
-  rowKey="id"
-  rowScrollTimeout={0}
-  rowsCount={50}
-  scrollToRowIndex={0}
-  tabIndex={-1}
-  toolbar={
-    <Toolbar
-      addRowButtonText="Add Row"
-      enableAddRow={true}
-      enableFilter={true}
-      filterRowsButtonText="Filter Rows"
-    />
-  }
-/>
+    enableCellAutoFocus={true}
+    enableCellSelect={false}
+    enableRowSelect={false}
+    getCellActions={[Function]}
+    headerFiltersHeight={45}
+    minColumnWidth={80}
+    minHeight={600}
+    onAddFilter={[Function]}
+    onBeforeEdit={[Function]}
+    onClearFilters={[Function]}
+    onGridSort={[Function]}
+    overScan={
+      Object {
+        "colsEnd": 5,
+        "colsStart": 5,
+        "rowsEnd": 5,
+        "rowsStart": 5,
+      }
+    }
+    rowGetter={[Function]}
+    rowHeight={35}
+    rowKey="id"
+    rowScrollTimeout={0}
+    rowsCount={50}
+    scrollToRowIndex={0}
+    tabIndex={-1}
+    toolbar={
+      <Toolbar
+        addRowButtonText="Add Row"
+        enableAddRow={true}
+        enableFilter={true}
+        filterRowsButtonText="Filter Rows"
+      />
+    }
+  />
+</div>
 `;

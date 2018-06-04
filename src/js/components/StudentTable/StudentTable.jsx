@@ -94,6 +94,11 @@ class StudentTable extends Component {
     });
   };
 
+  handleClearTable = () => {
+    const clearedTable = this.state.students.clear();
+    this.setState({ students: clearedTable });
+  };
+
   generateRandomStudents(count) {
     const randomStudents = new LinkedList();
 
@@ -141,17 +146,31 @@ class StudentTable extends Component {
 
   render() {
     return (
-      <ReactDataGrid
-        columns={this.state.columns}
-        rowGetter={this.rowGetter}
-        rowsCount={this.filteredRows().length}
-        minHeight={600}
-        onGridSort={this.handleGridSort}
-        toolbar={<Toolbar enableFilter />}
-        onAddFilter={this.handleFilterChange}
-        onClearFilters={this.onClearFilters}
-        getCellActions={this.getCellAction}
-      />
+      <div>
+        <nav className="navbar navbar-dark bg-dark justify-content-between">
+          <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
+          <form className="form-inline">
+            <button
+              id="delete-note-button"
+              onClick={this.handleClearTable}
+              type="button"
+              className="btn btn-danger ml-2"
+            >Clear Table
+            </button>
+          </form>
+        </nav>
+        <ReactDataGrid
+          columns={this.state.columns}
+          rowGetter={this.rowGetter}
+          rowsCount={this.filteredRows().length}
+          minHeight={600}
+          onGridSort={this.handleGridSort}
+          toolbar={<Toolbar enableFilter />}
+          onAddFilter={this.handleFilterChange}
+          onClearFilters={this.onClearFilters}
+          getCellActions={this.getCellAction}
+        />
+      </div>
     );
   }
 }
