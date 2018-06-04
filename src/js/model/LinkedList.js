@@ -111,6 +111,7 @@ class LinkedList {
   clear() {
     this.head = null;
     this.length = 0;
+    return this;
   }
 
   filter(predicate) {

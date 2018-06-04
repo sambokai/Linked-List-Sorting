@@ -135,6 +135,14 @@ describe('LinkedList', () => {
 
       expect(exampleList).toMatchSnapshot();
     });
+
+    it('should return the empty list after clearing', () => {
+      const exampleList = new LinkedList('One').append('Two').append('Three').append('Four');
+
+      const result = exampleList.clear();
+
+      expect(result).toMatchSnapshot();
+    });
   });
 
   describe('filter()', () => {
