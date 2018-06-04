@@ -176,8 +176,13 @@ class StudentTable extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark bg-dark justify-content-between">
-          <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
+        <nav className="navbar navbar-dark bg-dark justify-content-between mb-3">
+          <div>
+            <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
+            <span className="navbar-text">
+              Sam Bokai for Algorithms & Data Structures
+            </span>
+          </div>
           <form className="form-inline">
             <div className="form-group">
               <input ref={this.studentGenerateCountInput} defaultValue={50} className="form-control" type="number" size={4} min={1} max={this.state.maxStudentGenerateCount} />

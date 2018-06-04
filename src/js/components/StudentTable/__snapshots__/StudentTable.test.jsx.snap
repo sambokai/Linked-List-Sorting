@@ -72,15 +72,22 @@ Array [
 exports[`<StudentTable/> should render correctly 1`] = `
 <div>
   <nav
-    className="navbar navbar-dark bg-dark justify-content-between"
+    className="navbar navbar-dark bg-dark justify-content-between mb-3"
   >
-    <a
-      className="navbar-brand"
-      href="/"
-      id="navbar-logo"
-    >
-      Linked List & Students
-    </a>
+    <div>
+      <a
+        className="navbar-brand"
+        href="/"
+        id="navbar-logo"
+      >
+        Linked List & Students
+      </a>
+      <span
+        className="navbar-text"
+      >
+        Sam Bokai for Algorithms & Data Structures
+      </span>
+    </div>
     <form
       className="form-inline"
     >
