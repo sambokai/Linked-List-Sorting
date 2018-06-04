@@ -7,22 +7,6 @@ LinkedList {
 }
 `;
 
-exports[`LinkedList remove() return the linked-list without the removed element 1`] = `
-LinkedList {
-  "head": Node {
-    "next": Node {
-      "next": Node {
-        "next": null,
-        "value": "Four",
-      },
-      "value": "Three",
-    },
-    "value": "One",
-  },
-  "length": 3,
-}
-`;
-
 exports[`LinkedList remove() should remove the first element 1`] = `
 LinkedList {
   "head": Node {
@@ -40,6 +24,38 @@ LinkedList {
 `;
 
 exports[`LinkedList remove() should remove the second element 1`] = `
+LinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "value": "Four",
+      },
+      "value": "Three",
+    },
+    "value": "One",
+  },
+  "length": 3,
+}
+`;
+
+exports[`LinkedList remove() should return the linked-list without the removed element when the first element was removed 1`] = `
+LinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "value": "Four",
+      },
+      "value": "Three",
+    },
+    "value": "Two",
+  },
+  "length": 3,
+}
+`;
+
+exports[`LinkedList remove() should return the linked-list without the removed element when the second element was removed 1`] = `
 LinkedList {
   "head": Node {
     "next": Node {

@@ -72,7 +72,7 @@ class LinkedList {
     if (index === 0) {
       this.head = current.next;
       this.length -= 1;
-      return current;
+      return this;
     }
 
     let count = 0;

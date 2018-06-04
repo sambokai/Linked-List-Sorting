@@ -76,12 +76,20 @@ describe('LinkedList', () => {
       expect([...exampleList]).toMatchObject(["One", "Two", "Four"]);
     });
 
-    it('return the linked-list without the removed element', () => {
+    it('should return the linked-list without the removed element when the second element was removed', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
 
-      const deletedNode = exampleList.remove(1);
+      const studentsWithSecondRemoved = exampleList.remove(1);
 
-      expect(deletedNode).toMatchSnapshot();
+      expect(studentsWithSecondRemoved).toMatchSnapshot();
+    });
+
+    it('should return the linked-list without the removed element when the first element was removed', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      const studentsWithFirstRemoved = exampleList.remove(0);
+
+      expect(studentsWithFirstRemoved).toMatchSnapshot();
     });
 
     it('should throw an error if index to be removed does not exist', () => {
