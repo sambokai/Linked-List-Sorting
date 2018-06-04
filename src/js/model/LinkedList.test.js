@@ -52,7 +52,7 @@ describe('LinkedList', () => {
   });
 
   describe('remove()', () => {
-    it('should remove an element at a specified index other than 0', () => {
+    it('should remove the second element', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
 
       exampleList.remove(1);
@@ -60,7 +60,7 @@ describe('LinkedList', () => {
       expect(exampleList).toMatchSnapshot();
     });
 
-    it('should remove the first element if desired', () => {
+    it('should remove the first element', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
 
       exampleList.remove(0);
@@ -68,12 +68,20 @@ describe('LinkedList', () => {
       expect(exampleList).toMatchSnapshot();
     });
 
-    it('return the removed element', () => {
+    it('should remove an element other than the first or second', () => {
+      const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
+
+      exampleList.remove(2);
+
+      expect([...exampleList]).toMatchObject(["One", "Two", "Four"]);
+    });
+
+    it('return the linked-list without the removed element', () => {
       const exampleList = new LinkedList("One").append("Two").append("Three").append("Four");
 
       const deletedNode = exampleList.remove(1);
 
-      expect(deletedNode.value).toBe("Two");
+      expect(deletedNode).toMatchSnapshot();
     });
 
     it('should throw an error if index to be removed does not exist', () => {

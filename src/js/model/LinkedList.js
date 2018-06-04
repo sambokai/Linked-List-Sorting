@@ -87,7 +87,7 @@ class LinkedList {
 
     previousNode.next = nodeToBeDeleted.next;
     this.length -= 1;
-    return nodeToBeDeleted;
+    return this;
   }
 
   getIndex(predicate) {
