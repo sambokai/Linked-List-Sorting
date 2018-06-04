@@ -6,19 +6,19 @@ Array [
     "firstName": "Anton",
     "id": 1,
     "lastName": "Meyer",
-    "universityMajor": "cs",
+    "universityMajor": "Computer Science",
   },
   Student {
     "firstName": "George",
     "id": 3,
     "lastName": "Michael",
-    "universityMajor": "hi",
+    "universityMajor": "History",
   },
   Student {
     "firstName": "Xerxes",
     "id": 2,
     "lastName": "Smith",
-    "universityMajor": "ma",
+    "universityMajor": "Mathematics",
   },
 ]
 `;
@@ -29,19 +29,19 @@ Array [
     "firstName": "Xerxes",
     "id": 2,
     "lastName": "Smith",
-    "universityMajor": "ma",
+    "universityMajor": "Mathematics",
   },
   Student {
     "firstName": "George",
     "id": 3,
     "lastName": "Michael",
-    "universityMajor": "hi",
+    "universityMajor": "History",
   },
   Student {
     "firstName": "Anton",
     "id": 1,
     "lastName": "Meyer",
-    "universityMajor": "cs",
+    "universityMajor": "Computer Science",
   },
 ]
 `;
@@ -52,19 +52,19 @@ Array [
     "firstName": "Anton",
     "id": 1,
     "lastName": "Meyer",
-    "universityMajor": "cs",
+    "universityMajor": "Computer Science",
   },
   Student {
     "firstName": "Xerxes",
     "id": 2,
     "lastName": "Smith",
-    "universityMajor": "ma",
+    "universityMajor": "Mathematics",
   },
   Student {
     "firstName": "George",
     "id": 3,
     "lastName": "Michael",
-    "universityMajor": "hi",
+    "universityMajor": "History",
   },
 ]
 `;

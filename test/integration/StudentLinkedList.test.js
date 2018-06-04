@@ -3,12 +3,12 @@ import LinkedList from "../../src/js/model/LinkedList";
 import Majors from "../../src/js/model/Majors";
 
 const exampleStudents = () => new LinkedList()
-  .append(new Student("Sam", "Bokai", "cs"))
-  .append(new Student("Yanis", "Varoufakis", "ec"))
-  .append(new Student("Slavoj", "Zizek", "hi"))
-  .append(new Student("George", "Berg", "cs"))
-  .append(new Student("Sam", "Friday", "hi"))
-  .append(new Student("Thomas", "Berg", "ma"));
+  .append(new Student("Sam", "Bokai", Majors.COMPUTER_SCIENCE))
+  .append(new Student("Yanis", "Varoufakis", Majors.ECONOMICS))
+  .append(new Student("Slavoj", "Zizek", Majors.HISTORY))
+  .append(new Student("George", "Berg", Majors.COMPUTER_SCIENCE))
+  .append(new Student("Sam", "Friday", Majors.HISTORY))
+  .append(new Student("Thomas", "Berg", Majors.MATHEMATICS));
 
 
 describe('A LinkedList of Students', () => {
