@@ -119,6 +119,19 @@ describe('LinkedList', () => {
 
       expect(fruits.getIndex(bodyIsPear)).toEqual(3);
     });
+
+    it('should throw error if the linked list ist empty', () => {
+      const list = new LinkedList();
+
+      expect(() => list.getIndex()).toThrow('Empty list');
+    });
+
+    it('should return -1 if the passed predicate does never evaluate as true when applied to alle of the elements', () => {
+      const list = new LinkedList(1).append(2).append(3);
+      const predicate = element => element === 4;
+
+      expect(list.getIndex(predicate)).toEqual(-1);
+    });
   });
 
   describe('clear()', () => {
