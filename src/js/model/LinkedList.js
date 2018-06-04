@@ -63,7 +63,7 @@ class LinkedList {
   }
 
   remove(index) {
-    const current = this.head;
+    let current = this.head;
 
     if (index < 0 || index > this.length) {
       throw new Error('Invalid index');
@@ -82,6 +82,7 @@ class LinkedList {
     while (count < index) {
       previousNode = current;
       nodeToBeDeleted = current.next;
+      current = current.next;
       count += 1;
     }
 
