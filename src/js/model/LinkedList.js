@@ -40,6 +40,7 @@ class LinkedList {
     node.next = this.head;
     this.head = node;
     this.length += 1;
+    return this;
   }
 
   get(index) {
