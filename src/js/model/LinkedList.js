@@ -100,7 +100,7 @@ class LinkedList {
     }
 
     while (count < this.length) {
-      if (predicate(current.value)) return count
+      if (predicate(current.value)) return count;
       current = current.next;
       count += 1;
     }
