@@ -178,7 +178,7 @@ class StudentTable extends Component {
       <div>
         <nav className="navbar navbar-dark bg-dark justify-content-between mb-3">
           <div>
-            <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Students</a>
+            <a id="navbar-logo" className="navbar-brand" href="/">Linked List & Sorting</a>
             <span className="navbar-text">
               Sam Bokai for Algorithms & Data Structures
             </span>
