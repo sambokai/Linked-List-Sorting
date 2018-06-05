@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DoublyLinkedList append() should add a single element to the end of the DoublyLinkedList 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": null,
+    "previous": null,
+    "value": 100,
+  },
+  "length": 1,
+  "tail": Node {
+    "next": null,
+    "previous": null,
+    "value": 100,
+  },
+}
+`;
+
+exports[`DoublyLinkedList append() should add multiple elements to the end of the DoublyLinkedList 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": Node {
+        "next": null,
+        "previous": [Circular],
+        "value": 3,
+      },
+      "previous": [Circular],
+      "value": 2,
+    },
+    "previous": null,
+    "value": 1,
+  },
+  "length": 3,
+  "tail": Node {
+    "next": null,
+    "previous": Node {
+      "next": [Circular],
+      "previous": Node {
+        "next": [Circular],
+        "previous": null,
+        "value": 1,
+      },
+      "value": 2,
+    },
+    "value": 3,
+  },
+}
+`;
+
+exports[`DoublyLinkedList prepend() should add a single element to the beginning of the DoublyLinkedList 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": Node {
+      "next": null,
+      "previous": [Circular],
+      "value": 1,
+    },
+    "previous": null,
+    "value": 0,
+  },
+  "length": 2,
+  "tail": Node {
+    "next": null,
+    "previous": Node {
+      "next": [Circular],
+      "previous": null,
+      "value": 0,
+    },
+    "value": 1,
+  },
+}
+`;
+
+exports[`DoublyLinkedList prepend() should add an element to an empty list 1`] = `
+DoublyLinkedList {
+  "head": Node {
+    "next": null,
+    "previous": null,
+    "value": 0,
+  },
+  "length": 1,
+  "tail": Node {
+    "next": null,
+    "previous": null,
+    "value": 0,
+  },
+}
+`;
