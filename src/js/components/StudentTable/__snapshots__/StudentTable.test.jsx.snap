@@ -80,7 +80,7 @@ exports[`<StudentTable/> should render correctly 1`] = `
         href="/"
         id="navbar-logo"
       >
-        Linked List & Students
+        Linked List & Sorting
       </a>
       <span
         className="navbar-text"
