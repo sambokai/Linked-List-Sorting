@@ -1,4 +1,8 @@
 class Node {
+  /**
+   * Create a Node
+   * @param {*} value - The content of the node.
+   */
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -6,6 +10,10 @@ class Node {
 }
 
 class LinkedList {
+  /**
+   * Create a LinkedList
+   * @param {*} value - (Optional) The content of the first node.
+   */
   constructor(value) {
     this.length = 0;
     this.head = null;
@@ -13,6 +21,11 @@ class LinkedList {
     if (value) { this.append(value); }
   }
 
+  /**
+   * Add a node to the end of the LinkedList
+   * @param {*} value - The content of the node.
+   * @returns {LinkedList} - The LinkedList with the new node added to it.
+   */
   append(value) {
     const node = new Node(value);
     let currentNode = this.head;
@@ -35,6 +48,11 @@ class LinkedList {
     return this;
   }
 
+  /**
+   * Add a node to the beginning of the LinkedList
+   * @param {*} value - The content of the node.
+   * @returns {LinkedList} - The LinkedList with the new node added to it.
+   */
   prepend(value) {
     const node = new Node(value);
     node.next = this.head;
@@ -43,6 +61,13 @@ class LinkedList {
     return this;
   }
 
+  /**
+   * Retrieve an element of the LinkedList from a specific position.
+   * @param index - The position from which to retrieve the element.
+   * @throws Will throw an error if the list is empty.
+   * @throws Will throw an error if the index parameter is out of bounds.
+   * @returns {null|*} - The retrieved element.
+   */
   get(index) {
     let current = this.head;
     let count = 0;
@@ -63,6 +88,11 @@ class LinkedList {
     return current;
   }
 
+  /**
+   * Remove an element of the LinkedList from a specific position.
+   * @param index - The position at which to delete the element.
+   * @returns {LinkedList} - The LinkedList with the node removed from it.
+   */
   remove(index) {
     let current = this.head;
 
@@ -92,6 +122,19 @@ class LinkedList {
     return this;
   }
 
+  /**
+   * @callback elementSatisfiesCondition
+   * @param {*} - The element on which to perform the condition check.
+   * @returns {boolean} - Whether the condition matched or not.
+   */
+
+  /**
+   * Retrieves the position of the first element that matches a specified condition.
+   * @param {elementSatisfiesCondition} predicate - The condition.
+   * @throws Will throw an error if the list is empty.
+   * @returns {number} - The index of the element that matches the condition.
+   * Will be -1 if none of the elements matched the condition.
+   */
   getIndex(predicate) {
     let current = this.head;
     let count = 0;
@@ -109,12 +152,22 @@ class LinkedList {
     return -1;
   }
 
+  /**
+   * Deletes all nodes from the LinkedList
+   * @return {LinkedList} - The LinkedList after having cleared all nodes.
+   */
   clear() {
     this.head = null;
     this.length = 0;
     return this;
   }
 
+  /**
+   * Filter the LinkedList according to a specified condition.
+   * @param {elementSatisfiesCondition} predicate - The condition that all
+   * the nodes of the filtered LinkedList must satisfy.
+   * @return {LinkedList} - A LinkedList containing only those Nodes that matched the condition.
+   */
   filter(predicate) {
     const filtered = new LinkedList();
     // eslint-disable-next-line no-restricted-syntax
@@ -124,6 +177,21 @@ class LinkedList {
     return filtered;
   }
 
+  /**
+   * @callback compareTwoElements
+   * @description Compares two elements.
+   * @param {*} a - The first element.
+   * @param {*} b - The second element.
+   * @returns {number} - Must return -1 if a is less than b by some defined criterion,
+   * return 1 if a is greater than b and 0 if they are equal.
+   */
+
+  /**
+   * Sorts the LinkedList using an implementation of the insertion sort algorithm.
+   * @param {compareTwoElements} compare - (Optional) The compare function by which to sort.
+   * By default compares A > B.
+   * @return {LinkedList} - The sorted LinkedList.
+   */
   insertionSort(compare = (a, b) => a > b) {
     const items = [...this];
     for (let i = 0; i < items.length; i += 1) {
@@ -139,6 +207,12 @@ class LinkedList {
     return sorted;
   }
 
+  /**
+   * Sorts the LinkedList using an implementation of the merge sort algorithm.
+   * @param {compareTwoElements} compare - (Optional) The compare function by which to sort.
+   * By default compares A > B.
+   * @return {LinkedList} - The sorted LinkedList.
+   */
   mergeSort(compare = (a, b) => a > b) {
     const sortedArray = LinkedList.mergeArray([...this], compare);
     const sortedList = new LinkedList();
@@ -146,6 +220,12 @@ class LinkedList {
     return sortedList;
   }
 
+  /**
+   * Recursive helper function for merge sort.
+   * @param {*[]} arr - The array to be sorted.
+   * @param {compareTwoElements} compare - The compare function by which to sort.
+   * @return {*[]} - The sorted array.
+   */
   static mergeArray(arr, compare) {
     if (arr.length === 1) {
       return arr;
@@ -162,6 +242,14 @@ class LinkedList {
     );
   }
 
+  /**
+   * Helper function for merge sort, that assigns values to the left/right array
+   * based on a compare function and then merges the two arrays.
+   * @param {*[]} left - The left array.
+   * @param {*[]} right - The right array.
+   * @param {compareTwoElements} compare
+   * @return {*[]} - The merged array.
+   */
   static merge(left, right, compare) {
     const result = [];
     let indexLeft = 0;
@@ -180,6 +268,13 @@ class LinkedList {
     return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
   }
 
+
+  /**
+   * LinkedList Iterator
+   * @description Used to be able to iterate over a LinkedList
+   * and use the spread ([...ExampleList]) operator.
+   * @return {IterableIterator<*>} - The iterator of the LinkedList
+   */
   * [Symbol.iterator]() {
     let element = this.head;
 

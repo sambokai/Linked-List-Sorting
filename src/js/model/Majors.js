@@ -1,3 +1,12 @@
+/**
+ * @typedef {string} majorString
+ */
+
+/**
+ * An immutable quasi enum of university majors using ES6 syntax.
+ * @readonly
+ * @enum {majorString} - The human-readable string version of a major.
+ */
 const Majors = Object.freeze({
   COMPUTER_SCIENCE: 'Computer Science',
   MATHEMATICS: 'Mathematics',
