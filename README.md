@@ -11,6 +11,10 @@ cd Linked-List-Sorting
 npm install # Install dependencies into project folder
 npm start # Run development server @ http://localhost:8080
 
+
+# Other
+npm test # Run unit & integration tests
+npm run build # Build the app and bundle it into the /dist folder. Open the index.html file to run the app without the need of a server
 ```
 
 #### Other
