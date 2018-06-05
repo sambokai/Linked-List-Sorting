@@ -53,6 +53,34 @@ class DoublyLinkedList {
 
     return this;
   }
+
+  get(index) {
+    if (this.length === 0) {
+      throw new Error('Empty list');
+    }
+
+    if (index < 0 || index > this.length) {
+      throw new Error('Invalid index');
+    }
+
+    let current = this.head;
+
+    if (index > this.length / 2) {
+      let count = this.length.valueOf();
+      while (count >= index) {
+        current = current.next;
+        count -= 1;
+      }
+    } else {
+      let count = 0;
+      while (count < index) {
+        current = current.next;
+        count = 1;
+      }
+    }
+
+    return current;
+  }
 }
 
 export default DoublyLinkedList;

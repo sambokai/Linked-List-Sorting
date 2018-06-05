@@ -43,4 +43,32 @@ describe('DoublyLinkedList', () => {
       expect(list).toMatchSnapshot();
     });
   });
+
+
+  describe('get()', () => {
+    it('should get the first element of a list', () => {
+      const list = new DoublyLinkedList();
+      list.append(1).append(2).append(3);
+
+      const actual = list.get(0);
+      expect(actual.value).toEqual(1);
+    });
+
+    it('should get the last element of a list', () => {
+      const list = new DoublyLinkedList();
+      list.append(1).append(2).append(3);
+
+      const actual = list.get(2);
+      expect(actual.value).toEqual(3);
+    });
+
+    it('should get an element other than the first or last', () => {
+      const list = new DoublyLinkedList();
+      list.append(1).append(2).append(3).append(4)
+        .append(5);
+
+      const actual = list.get(1);
+      expect(actual.value).toEqual(2);
+    });
+  });
 });
