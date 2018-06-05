@@ -17,9 +17,5 @@ npm test # Run unit & integration tests
 npm run build # Build the app and bundle it into the /dist folder. Open the index.html file to run the app without the need of a server
 ```
 
-#### Other
-``` bash
-npm test # Run unit & integration tests
-
-npm run build # Build the app and bundle it into the /dist folder. Open the index.html file to run the app without the need of a server
-```
+#### User Interface
+![User Guide](./LinkedList-UserGuide.png)
