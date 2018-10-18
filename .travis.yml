@@ -11,6 +11,7 @@ before_deploy:
 - npm run build
 deploy:
   provider: pages
+  fqdn: linkedlist.sambokai.com
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
